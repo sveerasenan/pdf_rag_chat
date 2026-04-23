@@ -2,7 +2,8 @@
 
 A Streamlit application that lets you upload a PDF and ask questions about it using Retrieval-Augmented Generation (RAG). Supports both OpenAI and Google Gemini as LLM/embedding providers.
 
-![App Demo](app_demo.png)
+![App Demo](images/app_demo.png)
+![App Demo](images/app_demo2.png)
 
 ## Features
 
