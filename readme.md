@@ -2,7 +2,7 @@
 
 A Streamlit application that lets you upload a PDF and ask questions about it using Retrieval-Augmented Generation (RAG). Supports both OpenAI and Google Gemini as LLM/embedding providers.
 
-![App Demo](images/app_demo.png)
+![App Demo](images/App_demo.png)
 ![App Demo](images/app_demo2.png)
 
 ## Features
@@ -21,14 +21,9 @@ pdf-rag-app/
 │   ├── pdf_service.py            # PDF loading, splitting, page-number normalisation
 │   ├── embedding_service.py      # Embeddings, FAISS vectorstore, retriever
 │   └── llm_service.py            # LLM creation, prompt building, answer generation
-├── tests/
-│   ├── conftest.py               # Shared pytest fixtures
-│   ├── test_pdf_service.py
-│   ├── test_embedding_service.py
-│   ├── test_llm_service.py
-│   └── sample_pdfs/              # Place sample.pdf here for integration tests
+├── Test_data/
+│   └── Research Paper.pdf        # Sample PDF for testing the app
 ├── requirements.txt
-├── pytest.ini
 └── .env                          # API keys (never commit this file)
 ```
 
@@ -73,20 +68,4 @@ GOOGLE_API_KEY=your-google-api-key
 streamlit run app.py
 ```
 
-## Running Tests
-
-```bash
-pytest
-```
-
-### Integration tests with a real PDF
-
-Place a `sample.pdf` in `tests/sample_pdfs/`. Integration tests that depend on it are automatically skipped when the file is absent.
-
-```bash
-# Run only integration tests
-pytest -k "TestIntegration"
-
-# Run only unit tests (no real PDF needed)
-pytest -k "not real_pdf"
-```
+Once the app is running, upload any PDF to start asking questions. A sample research paper is included in the `Test_data/Research Paper.pdf` file for you to try out the application.
